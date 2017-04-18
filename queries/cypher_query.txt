@@ -1,0 +1,41 @@
+CREATE (Martin:LECTURER{name:'Martin Hynes'})
+CREATE (Damien:LECTURER{name:'Damien Costello'})
+CREATE (Gerard:LECTURER{name:'Gerard Harrison'})
+CREATE (Deirdre:LECTURER{name:'Deirdre O`Donovan'})
+
+CREATE (DBMS:MODULE{name:'Database Management Systems'})
+CREATE (MobileApps:MODULE{name:'Mobile Application Development 2'})
+CREATE (SSRAD:MODULE{name:'Server Side RAD'})
+CREATE (SoftwareTesting:MODULE{name:'Software Testing'})
+
+CREATE (R0994:ROOM{capacity:90, roomNo:'0994'})
+CREATE (R0223:ROOM{capacity:60, roomNo:'0223'})
+CREATE (R0436:ROOM{capacity:20, roomNo:'0436'})
+CREATE (R0438:ROOM{capacity:20, roomNo:'0438'})
+
+CREATE (Lecture1:CLASS{type:'lecture'})
+CREATE (Lab1:CLASS{type:'lab'})
+CREATE (Lab2:CLASS{type:'lab'})
+CREATE (Lab3:CLASS{type:'lab'})
+CREATE (Lecture2:CLASS{type:'lecture'})
+
+CREATE (SoftDev:COURSE{name:'Software Development',code:'KSOFG73'})
+
+CREATE (DBMS)-[:TAUGHT_BY]->(Deirdre), 
+(DBMS)-[:HAS]->(Lecture1), 
+(DBMS)-[:HAS]->(Lab1), 
+(Lecture1)-[:ON{day:'Mon',time:'10:00',duration: 1,to:['KSOFG73','KBDIG73'],by:'Deirdre O´Donovan',group:'All'}]->(R0994),
+(Lab1)-[:ON{day:'Tue',time:'11:00',duration: 2,to:'KSOFG73',by:'Deirdre O´Donovan',group:'C'}]->(R0438),
+(MobileApps)-[:TAUGHT_BY]->(Damien), 
+(MobileApps)-[:HAS]->(Lecture2), 
+(Lecture2)-[:ON{day:'Mon',time:'12:00',duration: 1.5,to:'KSOFG73',by:'Damien Costello', group:'All'}]->(R0223),
+(SSRAD)-[:TAUGHT_BY]->(Gerard), 
+(SSRAD)-[:HAS]->(Lab2), 
+(Lab2)-[:ON{day:'Mon',time:'16:00',duration: 2,to:'KSOFG73',by:'Gerard Harrison', group:'C'}]->(R0436),
+(SoftwareTesting)-[:TAUGHT_BY]->(Martin), 
+(SoftwareTesting)-[:HAS]->(Lab3), 
+(Lab3)-[:ON{day:'Tue',time:'09:00',duration: 2,to:'KSOFG73',by:'Martin Hynes', group:'C'}]->(R0436),
+(DBMS)-[:TAUGHT_TO]->(SoftDev),
+(MobileApps)-[:TAUGHT_TO]->(SoftDev),
+(SSRAD)-[:TAUGHT_TO]->(SoftDev),
+(SoftwareTesting)-[:TAUGHT_TO]->(SoftDev)

@@ -1,0 +1,77 @@
+Mon 	  	  	
+0484 CR1
+KBDIG73 INDIVIDUAL PROJECTS
+22-33, 36 	16
+	
+0994
+KSOFG73/KBDIG73 Database Mgmt Sys/L
+22-33, 36 	90
+	
+0376
+KBDIG73 Dynamic Web Dev/L
+22-33, 36 	30
+	
+0996
+KSOFG72/KBDIG73 APPLD NETWORKING TECH 2/L
+22-33, 36 	90
+	  	  	
+0209
+KBDIG73 INDIVIDUAL PROJECTS
+22-33, 36 	56
+	  	  	  	  	  	 
+Tue 	  	  	  	  	
+0484 CR1
+KBDIG73 Dynamic Web Dev/P
+22-33, 36 	16
+	  	  	
+0436 CR5 Projects/Media
+KBDIG73 INDIVIDUAL PROJECTS
+22-33, 36 	16
+	
+0939
+KSOFG72/KBDIG73 APPLD NETWORKING TECH 2/L
+22-33, 36 	90
+	  	  	
+0480 CR7
+KBDIG73 INDIVIDUAL PROJECTS
+22-33, 36 	16
+	
+0375
+KBDIG73 Dynamic Web Dev/L
+22-33, 36 	30
+	  	 
+Wed 	  	  	
+0482 CR3, 0481 CR4, 0480 CR7, 0436 CR5 Projects/Media
+KSOFG2/KBDIG3 Assessment
+33 	0
+	  	  	  	  	  	  	
+0482 CR3
+KBDIG73 MOBILE PROGRAMMING
+22-33, 36 	20
+	
+0995
+KSOFG73/KBDIG73 Database Mgmt Sys/L
+22-33, 36 	90
+	  	 
+Thu 	  	  	
+0482 CR3
+KBDIG73 INDIVIDUAL PROJECTS
+28-33 	16
+	  	  	
+0484 CR1
+KBDIG73 Database Mgmt Systems/P
+22-33, 36 	20
+	
+0368
+KBDIG73 MOBILE PROGRAMMING/L
+22-33, 36 	30
+	  	  	  	  	  	 
+Fri 	  	  	
+0436 CR5 Projects/Media
+KBDIG73 Dynamic Web Dev/P
+22-33, 36 	16
+	
+0484 CR1
+KBDIG73 App. Modelling & Simulation/P
+22-33, 36 	0
+	  	  	  	  	  	  	  	  	  	 

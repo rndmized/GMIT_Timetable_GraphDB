@@ -1,0 +1,101 @@
+ 	  	  	  	  	  	  	  	  	  	  	  	
+PF05
+KSOFG73 GRAPH THEORY Gr A/P
+27-33, 36 	16
+	  	  	
+0481 CR4
+KSOFG73 Software Testing Gr A/P
+22-33, 36 	16
+  	  	  	  	
+0994
+KSOFG73/KBDIG73 Database Mgmt Sys/L
+22-33, 36 	90
+	  	  	
+0223
+KSOFG73 MOBILE APPS/L
+22-33, 36 	60
+	  	  	  	  	
+0436 CR5 Projects/Media
+KSOFG73 SERVER SIDE RAD Gr C/P
+22-33, 36 	20
+Tue 	  	  	  	  	  	  	
+0482 CR3
+KSOFG73 Database Mgmt Systems Gr C/P
+30-33, 36 	16
+	  	  	  	  	  	  	  	  	  	 
+  	  	
+0436 CR5 Projects/Media
+KSOFG73 Software Testing Gr C/P
+22-33, 36 	20
+	
+0470 Computing Practical Lab
+KSOFG73 MOBILE APPS Gr A/P
+22-33, 36 	23
+	  	  	
+0436 CR5 Projects/Media
+KSOFG73 Software Testing Gr B/P
+22-33, 36 	16
+	
+0436 CR5 Projects/Media
+KSOFG73 SERVER SIDE RAD Gr B/P
+22-33, 36 	20
+  	  	
+0481 CR4
+KSOFG73 Database Mgmt Systems Gr A/P
+22-33, 36 	20
+	  	  	
+0379
+KSOFG73 GRAPH THEORY Gr B/P
+22-33, 36 	16
+	  	  	  	  	  	  	  	  	  	 
+Wed 	  	  	
+0162
+KSOFG73 GRAPH THEORY Gr C/P
+22-33, 36 	16
+	
+0938
+KSOFG73 GRAPH THEORY/L
+22-33, 36 	60
+	
+0208
+KSOFG73 PROFESSIONAL PRACTICE IN IT/L
+22-33, 36 	65
+	  	  	
+0997
+KSOFG73 SERVER SIDE RAD/L
+22-33, 36 	60
+	
+0994
+KSOFG73 Software Testing/L
+22-33, 36 	90
+	
+0939
+KSOFG73/KCDMG84 Software Testing/lL
+22-33, 36 	90
+	
+0995
+KSOFG73/KBDIG73 Database Mgmt Sys/L
+22-33, 36 	90
+	  	 
+Thu 	  	  	
+PF18
+KSOFG73 MOBILE APPS Gr B/P
+22-33, 36 	23
+	
+PF18
+KSOFG73 MOBILE APPS Gr C/P
+22-33, 36 	23
+	  	  	
+0436 CR5 Projects/Media
+KSOFG73 SERVER SIDE RAD Gr A/P
+22-33, 36 	20
+	  	  	  	 
+Fri 	  	  	
+0482 CR3
+22-33, 36 	20
+KSOFG73 Database Mgmt Systems Gr B/P
+	
+0208
+KSOFG73 GRAPH THEORY/L
+22-33, 36 	60
+	  	  	  	  	  	  	  	  	  	  	  	 

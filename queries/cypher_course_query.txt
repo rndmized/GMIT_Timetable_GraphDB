@@ -1,0 +1,3 @@
+CREATE (SoftDevY3:COURSE{name:'Software Development Year 3',code:'KSOFG73'})
+CREATE (DIGMEDY3:COURSE{name:'Digital Media Year 3',code:'KBDIG73'})
+CREATE (DIGMEDY4:COURSE{name:'Digital Media Year 4',code:'KCDMG84'})

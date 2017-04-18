@@ -1,0 +1,167 @@
+CREATE (Charles:LECTURER{name:'Charles Xavier'})
+CREATE (Jones:LECTURER{name:'Indiana Jones'})
+CREATE (Viktor:LECTURER{name:'Viktor Frankenstein'})
+CREATE (Reed:LECTURER{name:'Richard Reed'})
+CREATE (Doom:LECTURER{name:'Viktor von Doom'})
+CREATE (Sue:LECTURER{name:'Peggy Sue'})
+CREATE (Rodriguez:LECTURER{name:'Bender Rodriguez'})
+CREATE (Vimes:LECTURER{name:'Samuel Vimes'})
+CREATE (James:LECTURER{name:'James Bond'})
+CREATE (Curie:LECTURER{name:'Marie Curie'})
+CREATE (Wayne:LECTURER{name:'Bruce Wayne'})
+CREATE (Campbell:LECTURER{name:'Bruce Campbell'})
+CREATE (Baggins:LECTURER{name:'Bilbo Baggins'})
+CREATE (Parker:LECTURER{name:'Peter Parker'})
+
+CREATE (SoftDevY3:COURSE{name:'Software Development Year 3',code:'KSOFG73'})
+CREATE (DIGMEDY3:COURSE{name:'Digital Media Year 3',code:'KBDIG73'})
+CREATE (DIGMEDY4:COURSE{name:'Digital Media Year 4',code:'KCDMG84'})
+
+CREATE (GRAPH:MODULE{name:'GRAPH THEORY'})
+CREATE (PROJ:MODULE{name:'PROFESSIONAL PRACTICE IN IT'})
+CREATE (ST:MODULE{name:'Software Testing'})
+CREATE (DBMS:MODULE{name:'Database Mgmt Sys'})
+CREATE (MAPPS:MODULE{name:'MOBILE APPS'})
+CREATE (SSRAD:MODULE{name:'SERVER SIDE RAD'})
+CREATE (MTECH:MODULE{name:'Media & Tech Convergence'})
+CREATE (GP:MODULE{name:'Group Project'})
+CREATE (SDMEDIA:MODULE{name:'Social Web/Digital Media Strategy'})
+CREATE (INFODVIS:MODULE{name:'Info & Data Visualisation'})
+CREATE (IP:MODULE{name:'INDIVIDUAL PROJECTS'})
+CREATE (DYNWEBDEV:MODULE{name:'Dynamic Web Dev'})
+CREATE (NET:MODULE{name:'APPLD NETWORKING TECH 2'})
+CREATE (MOBDEV:MODULE{name:'MOBILE PROGRAMMING'})
+
+CREATE (Lecture1:CLASS{type:'lecture'})
+CREATE (Lecture2:CLASS{type:'lecture'})
+CREATE (Lecture3:CLASS{type:'lecture'})
+CREATE (Lecture4:CLASS{type:'lecture'})
+CREATE (Lecture5:CLASS{type:'lecture'})
+CREATE (Lecture6:CLASS{type:'lecture'})
+CREATE (Lecture7:CLASS{type:'lecture'})
+CREATE (Lecture8:CLASS{type:'lecture'})
+CREATE (Lecture9:CLASS{type:'lecture'})
+CREATE (Lecture10:CLASS{type:'lecture'})
+CREATE (Lecture11:CLASS{type:'lecture'})
+CREATE (Lecture12:CLASS{type:'lecture'})
+CREATE (Lab1:CLASS{type:'lab'})
+CREATE (Lab2:CLASS{type:'lab'})
+CREATE (Lab3:CLASS{type:'lab'})
+CREATE (Lab4:CLASS{type:'lab'})
+CREATE (Lab5:CLASS{type:'lab'})
+CREATE (Lab6:CLASS{type:'lab'})
+CREATE (Lab7:CLASS{type:'lab'})
+CREATE (Lab8:CLASS{type:'lab'})
+CREATE (Lab9:CLASS{type:'lab'})
+CREATE (Lab10:CLASS{type:'lab'})
+CREATE (Lab11:CLASS{type:'lab'})
+
+CREATE (R1035:ROOM{capacity:20, roomNo:'1035'})
+CREATE (R0481:ROOM{capacity:20, roomNo:'0481'})
+CREATE (R0375:ROOM{capacity:25, roomNo:'0375'})
+CREATE (R0159:ROOM{capacity:30, roomNo:'0159'})
+CREATE (R0373:ROOM{capacity:20, roomNo:'0373'})
+CREATE (R0480:ROOM{capacity:20, roomNo:'0480'})
+CREATE (R1033:ROOM{capacity:20, roomNo:'1033'})
+CREATE (R0939:ROOM{capacity:90, roomNo:'0939'})
+CREATE (RPF05:ROOM{capacity:16, roomNo:'PF05'})
+CREATE (R0994:ROOM{capacity:90, roomNo:'0994'})
+CREATE (R0223:ROOM{capacity:60, roomNo:'0223'})
+CREATE (R0436:ROOM{capacity:20, roomNo:'0436'})
+CREATE (R0482:ROOM{capacity:16, roomNo:'0482'})
+CREATE (R0470:ROOM{capacity:23, roomNo:'0470'})
+CREATE (R0379:ROOM{capacity:16, roomNo:'0379'})
+CREATE (R0162:ROOM{capacity:16, roomNo:'0162'})
+CREATE (R0938:ROOM{capacity:60, roomNo:'0938'})
+CREATE (R0208:ROOM{capacity:65, roomNo:'0208'})
+CREATE (R0997:ROOM{capacity:60, roomNo:'0997'})
+CREATE (R0995:ROOM{capacity:90, roomNo:'0995'})
+CREATE (RPF18:ROOM{capacity:23, roomNo:'PF18'})
+CREATE (R0484:ROOM{capacity:16, roomNo:'0484'})
+CREATE (R0376:ROOM{capacity:30, roomNo:'0376'})
+CREATE (R0209:ROOM{capacity:56, roomNo:'0209'})
+CREATE (R0368:ROOM{capacity:30, roomNo:'0368'})
+
+
+CREATE (DBMS)-[:TAUGHT_BY]->(Curie),
+(GRAPH)-[:TAUGHT_BY]->(Charles),
+(PROJ)-[:TAUGHT_BY]->(Rodriguez),
+(ST)-[:TAUGHT_BY]->(Jones),
+(MAPPS)-[:TAUGHT_BY]->(Doom),
+(SSRAD)-[:TAUGHT_BY]->(Campbell),
+(MTECH)-[:TAUGHT_BY]->(Parker),
+(GP)-[:TAUGHT_BY]->(Wayne),
+(SDMEDIA)-[:TAUGHT_BY]->(James),
+(INFODVIS)-[:TAUGHT_BY]->(Vimes),
+(IP)-[:TAUGHT_BY]->(Viktor),
+(DYNWEBDEV)-[:TAUGHT_BY]->(Sue),
+(NET)-[:TAUGHT_BY]->(Baggins),
+(MOBDEV)-[:TAUGHT_BY]->(Reed),
+(GRAPH)-[:TAUGHT_TO]->(SoftDevY3),
+(MAPPS)-[:TAUGHT_TO]->(SoftDevY3),
+(PROJ)-[:TAUGHT_TO]->(SoftDevY3),
+(SSRAD)-[:TAUGHT_TO]->(SoftDevY3),
+(MTECH)-[:TAUGHT_TO]->(DIGMEDY4),
+(GP)-[:TAUGHT_TO]->(DIGMEDY4),
+(SDMEDIA)-[:TAUGHT_TO]->(DIGMEDY4),
+(INFODVIS)-[:TAUGHT_TO]->(DIGMEDY4),
+(IP)-[:TAUGHT_TO]->(DIGMEDY3),
+(DYNWEBDEV)-[:TAUGHT_TO]->(DIGMEDY3),
+(NET)-[:TAUGHT_TO]->(DIGMEDY3),
+(MOBDEV)-[:TAUGHT_TO]->(DIGMEDY3),
+(DBMS)-[:TAUGHT_TO]->(SoftDevY3),
+(DBMS)-[:TAUGHT_TO]->(DIGMEDY4),
+(ST)-[:TAUGHT_TO]->(SoftDevY3),
+(ST)-[:TAUGHT_TO]->(DIGMEDY4),
+(GRAPH)-[:HAS]->(Lecture1),
+(GRAPH)-[:HAS]->(Lab1),
+(PROJ)-[:HAS]->(Lecture2),
+(ST)-[:HAS]->(Lecture3),
+(ST)-[:HAS]->(Lab2),
+(DBMS)-[:HAS]->(Lecture4),
+(DBMS)-[:HAS]->(Lab3),
+(MAPPS)-[:HAS]->(Lecture5),
+(MAPPS)-[:HAS]->(Lab4),
+(SSRAD)-[:HAS]->(Lecture6),
+(SSRAD)-[:HAS]->(Lab5),
+(MTECH)-[:HAS]->(Lecture7),
+(MTECH)-[:HAS]->(Lab6),
+(GP)-[:HAS]->(Lab7),
+(SDMEDIA)-[:HAS]->(Lecture8),
+(INFODVIS)-[:HAS]->(Lecture9),
+(INFODVIS)-[:HAS]->(Lab8),
+(IP)-[:HAS]->(Lab9),
+(DYNWEBDEV)-[:HAS]->(Lecture10),
+(DYNWEBDEV)-[:HAS]->(Lab10),
+(NET)-[:HAS]->(Lecture11),
+(MOBDEV)-[:HAS]->(Lecture12),
+(MOBDEV)-[:HAS]->(Lab11),
+(Lab1)-[:ON{day:'Mon',time:14,duration: 1,to:'KSOFG73',by:'Charles Xavier',group:'A'}]-(RPF05),
+(Lab1)-[:ON{day:'Tue',time:12,duration: 1,to:'KSOFG73',by:'Charles Xavier',group:'B'}]-(R0379),
+(Lab1)-[:ON{day:'Wed',time:9,duration: 1 ,to:'KSOFG73',by:'Charles Xavier',group:'C'}]-(R0162),
+(Lecture1)-[:ON{day:'Wed',time:10,duration: 1,to:'KSOFG73',by:'Charles Xavier',group:'All'}]-(R0938),
+(Lecture1)-[:ON{day:'Fri',time: 11,duration: 1,to:'KSOFG73',by:'Charles Xavier',group:'All'}]-(R0208),
+(Lecture2)-[:ON{day:'Wed',time:11,duration: 1,to:'KSOFG73',by:'Viktor von Doom',group:'All'}]-(R0208),
+(Lecture3)-[:ON{day:'Wed',time: 15,duration: 1,to:['KSOFG73','KCDMG84'],by:'Indiana Jones',group:'All'}]-(R0939),
+(Lab2)-[:ON{day:'Mon',time: 16,duration: 2,to:'KSOFG73',by:'Indiana Jones',group:'A'}]-(R0481),
+(Lab2)-[:ON{day:'Tue',time: 9,duration: 2,to:'KSOFG73',by:'Indiana Jones',group:'C'}]-(R0436),
+(Lab2)-[:ON{day:'Tue',time: 14,duration: 2,to:'KSOFG73',by:'Indiana Jones',group:'B'}]-(R0436),
+(Lab2)-[:ON{day:'Mon',time: 11,duration: 2,to:'KCDMG84',by:'Indiana Jones',group:'A'}]-(R0481),
+(Lecture4)-[:ON{day:'Mon',time: 10,duration: 1,to:['KSOFG73','KBDIG73'],by:'Marie Curie',group:'All'}]-(R0994),
+(Lecture4)-[:ON{day:'Wed',time: 16,duration: 1,to:['KSOFG73','KBDIG73'],by:'Marie Curie',group:'All'}]-(R0995),
+(Lab3)-[:ON{day:'Tue',time: 9,duration: 2,to:'KSOFG73',by:'Marie Curie',group:'A'}]-(R0481),
+(Lab3)-[:ON{day:'Tue',time: 11,duration: 2,to:'KSOFG73',by:'Marie Curie',group:'C'}]-(R0482),
+(Lab3)-[:ON{day:'Fri',time: 9,duration: 2,to:'KSOFG73',by:'Marie Curie',group:'B'}]-(R0482),
+(Lab3)-[:ON{day:'Thu',time: 11,duration: 2,to:'KBDIG73',by:'Marie Curie',group:'A'}]-(R0484),
+(Lecture5)-[:ON{day:'Mon',time: 12,duration: 2,to:'KSOFG73',by:'Viktor von Doom',group:'All'}]-(R0223),
+(Lab4)-[:ON{day:'Thu',time: 9,duration: 2,to:'KSOFG73',by:'Viktor von Doom',group:'B'}]-(RPF18),
+(Lab4)-[:ON{day:'Thu',time: 11,duration: 2,to:'KSOFG73',by:'Viktor von Doom',group:'C'}]-(RPF18),
+(Lab4)-[:ON{day:'Tue',time: 11,duration: 2,to:'KSOFG73',by:'Viktor von Doom',group:'A'}]-(R0470),
+(Lecture6)-[:ON{day:'Wed',time: 13,duration: 1,to:'KSOFG73',by:'Bruce Campbell',group:'All'}]-(R0997),
+(Lab5)-[:ON{day:'Mon',time: 16,duration: 2,to:'KSOFG73',by:'Bruce Campbell',group:'C'}]-(R0436),
+(Lab5)-[:ON{day:'',time:,duration: 2,to:'KSOFG73',by:Bruce Campbell'',group:''}]-(),
+(Lab5)-[:ON{day:'',time:,duration: 2,to:'KSOFG73',by:'Bruce Campbell',group:''}]-(),
+()-[:ON{day:'',time:,duration: ,to:'',by:'',group:''}]-(),
+
+
+

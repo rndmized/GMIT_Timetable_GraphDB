@@ -106,9 +106,13 @@ Data used to create the prototype database has been scrapped from the GMIT timet
 
 Retrieving modules per course (for all courses):
 * MATCH (n)-[r:TAUGHT_TO]-(m) RETURN n,m;
+
 Retreiving all modules taught on Tuesday to KSOG73 Group C:
+
 * MATCH (n:MODULE)-[r0]-(c)-[r:ON]-(v) WHERE r.day = 'Tue' and r.to = 'KSOFG73' and r.group = 'C' RETURN n,c;
+
 Retreive modules taught by Charles Xavier:
+
 * MATCH (m)-[r:TAUGHT_BY]-(l) WHERE l.name = 'Charles Xavier' RETURN l,m;
 
 ##### Cypher Queries Examples: Creating Nodes and Relationships.

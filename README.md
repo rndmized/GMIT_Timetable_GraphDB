@@ -55,19 +55,91 @@ In Neo4j data is stored in the form of edges or relationships, nodes, or propert
 * **Properties**: Nodes and relationshos can have properties, usually relevant data to the node or the relationship and can be use when seaching for specific values. It is not as fast as narrowing down searches using labels but it adds a new layer of complexity for more specific purposes.
 
 ### Assumptions/Constrains
-
+#### Assumptions
+***
 * Classes only start at hours on the dot. (Meaning 9:00, 10:00, never 16:30 or 13:22)
 * The same module can be taught by different lecturers.
 * The same module can be taught in different courses.
 * Lectures are taught to every group in the course of every course that has that module.
+
+#### Constrains
+***
 * A lab can only be taught to one course group at a time. (Either A, B or C).
 * If a course has only one group the default group will be A.
 * A lab can only be taught to one course at a time.
 * A class cannot be taught by a lecturer who does not teach the module.
 
 ### Design Decisions
+#### What information needs to be stored?
+***
+Based on the actual timetable and the information that display we can assume that there are 5 questions the timetable must respond: **What**, **When**, **Where**, **By** **Who** and **To** **Whom**.
+* _What_ in this case _what_ is the module is being taught. 
+* _When_  is the time slot in which the _what_ (module) is taught.
+* _Where_ is the room or venue where a _what_ is taught at a given _when_.
+* _By_ _Who_ is the lecturer who teaches a given _what_.
+* _To_ _Whom_ is the target of a given _what_ so the group of students who are taught.
+
+#### How is that information stored?
+***
+In order to answer those questions the database has been designed roughly as follows:
+
+- **Module**: A **node** containing the information to a module such as its name. (_What_)
+- **Room**: A **node** containing information about a venue where classes are held, such as maximum capacity and room number.(_Where_)
+- **Course**: A **node** containing information relative to a course such as course code. (_to_ _whom_) 
+- **Class**: A **node** containing the class type: either a lab or a lecture.
+- **Lecturer**: A **node** containing data about a lecturer such as name. (_Who_)
+- **Has**: **Relationship** between a Module and the Classes it might have (_lab_ or _lecturer_).
+- **Taught** **By**: **Relationship** between a Lecturer and a Module.  Indicates _who_ teaches _what_.
+- **Taught** **To**: **Relationship** between a Module and a Course. Indicates _what_ is taught _to_ _whom_.
+- **On**: **Relationship** between Module and Room. Expressing the relationship between both node, _**time**_ being such relationship the day and time a _what_ is taught on _where_. In addition, in order to comply with the constrains where more than one lecturer can teach more than one module an attribute has been added to store such data. It also contains the group is being taught in case that the module has a lab, and the couse has more than one group. It indicates as well the duration the class is on.
+
+The database is designed to be interfaced with a piece of software with the adequate validation checks in order to ensure data integrity.
+
+#### Where does the data come from?
+***
+
+Data used to create the prototype database has been scrapped from the GMIT timetable [website](http://timetable.gmit.ie). Rooms/Venues have been obtained by copying the  relevant website´s source code and copied them into notepad, and removed the option tags. Lecturers names are either fictional or historical characters. Cousrses, modules and times are actual elements and have been extracted from the timetable for each one. All base data is in the folder data_sets in this repository. 
+
+#### Querying the Database
+##### Cypher Queries Examples: Retrieving Information
+***
+
+Retrieving modules per course (for all courses):
+* MATCH (n)-[r:TAUGHT_TO]-(m) RETURN n,m;
+Retreiving all modules taught on Tuesday to KSOG73 Group C:
+* MATCH (n:MODULE)-[r0]-(c)-[r:ON]-(v) WHERE r.day = 'Tue' and r.to = 'KSOFG73' and r.group = 'C' RETURN n,c;
+Retreive modules taught by Charles Xavier:
+* MATCH (m)-[r:TAUGHT_BY]-(l) WHERE l.name = 'Charles Xavier' RETURN l,m;
+
+##### Cypher Queries Examples: Creating Nodes and Relationships.
+***
+##### When creating a **node** the structure is as follows: CREATE (alias:Label{attribute-key1:attribute-value1}) 
+##### When creating a **relationship** the structure is as follows: CREATE (alias-node1)-[:Label{attribute-key1:attribute-value1, .... }]->(alias-node2)
+##### When deleting a **node** the structure is as follows: MATCH (n) DELETE n;  
+##### When deleting a **relationship** the structure is as follows: MATCH (n)-[r]-(m) DELETE r;
+Labels and Attributes can be used to narrow down or be more specific about what node/relationship to delete.
+
+##### Creating Lecturer
+* CREATE (Charles:LECTURER{name:'Charles Xavier'}) 
+
+##### Creating Module
+* CREATE (GRAPH:MODULE{name:'GRAPH THEORY'})
+
+##### Creating Class
+* CREATE (Lecture1:CLASS{type:'lecture'})
+* CREATE (Lab1:CLASS{type:'lab'})
+
+##### Creating Course
+* CREATE (SoftDevY3:COURSE{name:'Software Development Year 3',code:'KSOFG73'})
+
+##### Creating Relationships
+* CREATE (GRAPH)-[:TAUGHT_BY]->(Charles)
+
+In the folder _**queries**_, in this repository there are a few text files containing queries to create nodes, and to recreate the prototype database _(cypher_query_v2.txt)_.
+
 
 ### Conclusion
+***
 
 ### Authors
 * **Albert Rando** - *Design, Documentation and Coding* - [rndmized](https://github.com/rndmized) - [LinkedIn](https://www.linkedin.com/in/albert-rando-612551121/)
@@ -75,5 +147,4 @@ In Neo4j data is stored in the form of edges or relationships, nodes, or propert
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 

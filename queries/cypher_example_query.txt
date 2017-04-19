@@ -1,0 +1,25 @@
+CREATE (Ian:LECTURER{name:'Ian McLoughlin'})
+
+CREATE (GRAPH:MODULE{name:'Graph Theory'})
+
+CREATE (R0208:ROOM{capacity:60, roomNo:'0208'})
+CREATE (R0938:ROOM{capacity:20, roomNo:'0938'})
+CREATE (RPF05:ROOM{capacity:60, roomNo:'PF05'})
+CREATE (R0379:ROOM{capacity:20, roomNo:'0379'})
+CREATE (R0162:ROOM{capacity:60, roomNo:'0162'})
+
+CREATE (Lecture1:CLASS{type:'lecture'})
+CREATE (Lab1:CLASS{type:'lab'})
+
+
+CREATE (SoftDev:COURSE{name:'Software Development',code:'KSOFG73'})
+
+CREATE (GRAPH)-[:TAUGHT_BY]->(Ian), 
+(GRAPH)-[:HAS]->(Lecture1), 
+(GRAPH)-[:HAS]->(Lab1), 
+(Lecture1)-[:ON{day:'Wed',time:'10:00',duration: 1,to:'KSOFG73',by:'Ian McLoughlin',group:'All'}]->(R0938),
+(Lecture1)-[:ON{day:'Fri',time:'11:00',duration: 1,to:'KSOFG73',by:'Ian McLoughlin',group:'All'}]->(R0208),
+(Lab1)-[:ON{day:'Mon',time: 14,duration: 1,to:'KSOFG73',by:'Ian McLoughlin',group:'A'}]->(RPF05),
+(Lab1)-[:ON{day:'Tue',time: 12,duration: 1,to:'KSOFG73',by:'Ian McLoughlin',group:'B'}]->(R0379),
+(Lab1)-[:ON{day:'Wed',time: 9,duration: 1,to:'KSOFG73',by:'Ian McLoughlin',group:'C'}]->(R0162),
+(GRAPH)-[:TAUGHT_TO]->(SoftDev)

@@ -11,11 +11,11 @@
 ##### 6. [Queries](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/6.-Queries)
 ##### 7. [Conclusions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/7.-Conclusion)
 
-### Introduction
+### 1. Introduction
 
 This repository contains a database design document and a graph database prototype for a third-year undergraduate project for the module Graph Theory. The module is taught to undergraduate students at GMIT in the Department of Computer Science and Applied Physics. The lecturer is Ian McLoughlin.
 
-### Overview
+### 2. Overview
 
 GMIT uses a database to store timetabling information. Courses, modules, different venues, are some of the pieces of information required to build a timetable. The main goal of this project is to design and implement, through a small prototype, a different way of store such data by using a Graph database called [Neo4J](https://neo4j.com/product/). To do so a Database Design Document is required in order to explain and detail what information needs to be stored, why is that information needed, what assumptions are made, contrains...
 
@@ -35,8 +35,8 @@ copied or scraped from GMIT’s timetabling website, or otherwise obtained.
 You should include, as a separate section in your design document, how you
 obtained the data in your prototype database.
 
-### Neo4J
-#### What is Neo4J?
+### 3. Neo4J
+#### 3.1. What is Neo4J?
 ***
 > [Neo4j](https://neo4j.com) is a graph database management system developed by Neo Technology, Inc. Described by its developers as an ACID-compliant transactional database with native graph storage and processing,[3] Neo4j is the most popular graph database according to db-engines.com.
 Neo4j is available in a GPL3-licensed open-source "community edition", with online backup and high availability extensions licensed under the terms of the Affero General Public License. Neo also licenses Neo4j with these extensions under closed-source commercial terms.
@@ -46,7 +46,7 @@ Excerpt from [Wikipedia](https://en.wikipedia.org/wiki/Neo4j) about Neo4J.
 
 A graph database or graph-oriented database, is a type of NoSQL database that uses graph theory to store, map and query relationships. A graph database is, in essence, a collection of nodes and edges.
 
-#### How does Neo4J Store Information?
+#### 3.2. How does Neo4J Store Information?
 ***
 In Neo4j data is stored in the form of edges or relationships, nodes, or properties, also called attributes. Each node and relationship can have any number of properties amd labels. Labels can be used to group nodes or relationships and ease searches by narrowing them down.
 
@@ -55,23 +55,23 @@ In Neo4j data is stored in the form of edges or relationships, nodes, or propert
 * **Labels**: Labels can be applied to either nodes or relationships and can be used to froup them in a  certain category or to define a type of node or relationship. 
 * **Properties**: Nodes and relationshos can have properties, usually relevant data to the node or the relationship and can be use when seaching for specific values. It is not as fast as narrowing down searches using labels but it adds a new layer of complexity for more specific purposes.
 
-### Assumptions/Constrains
-#### Assumptions
+### 4. Assumptions/Constrains
+#### 4.1. Assumptions
 ***
 * Classes only start at hours on the dot. (Meaning 9:00, 10:00, never 16:30 or 13:22)
 * The same module can be taught by different lecturers.
 * The same module can be taught in different courses.
 * Lectures are taught to every group in the course of every course that has that module.
 
-#### Constrains
+#### 4.2. Constrains
 ***
 * A lab can only be taught to one course group at a time. (Either A, B or C).
 * If a course has only one group the default group will be A.
 * A lab can only be taught to one course at a time.
 * A class cannot be taught by a lecturer who does not teach the module.
 
-### Design Decisions
-#### What information needs to be stored?
+### 5. Design Decisions
+#### 5.1. What information needs to be stored?
 ***
 Based on the actual timetable and the information that display we can assume that there are 5 questions the timetable must respond: **What**, **When**, **Where**, **By** **Who** and **To** **Whom**.
 * _What_ in this case _what_ is the module is being taught. 
@@ -80,7 +80,7 @@ Based on the actual timetable and the information that display we can assume tha
 * _By_ _Who_ is the lecturer who teaches a given _what_.
 * _To_ _Whom_ is the target of a given _what_ so the group of students who are taught.
 
-#### How is that information stored?
+#### 5.2. How is that information stored?
 ***
 In order to answer those questions the database has been designed roughly as follows:
 
@@ -96,13 +96,13 @@ In order to answer those questions the database has been designed roughly as fol
 
 The database is designed to be interfaced with a piece of software with the adequate validation checks in order to ensure data integrity.
 
-#### Where does the data come from?
+#### 5.3. Where does the data come from?
 ***
 
 Data used to create the prototype database has been scrapped from the GMIT timetable [website](http://timetable.gmit.ie). Rooms/Venues have been obtained by copying the  relevant website´s source code and copied them into notepad, and removed the option tags. Lecturers names are either fictional or historical characters. Cousrses, modules and times are actual elements and have been extracted from the timetable for each one. All base data is in the folder data_sets in this repository. 
 
-### Querying the Database
-##### Cypher Queries Examples: Retrieving Information
+### 6. Querying the Database
+##### 6.1. Cypher Queries Examples: Retrieving Information
 ***
 
 Retrieving modules per course (for all courses):
@@ -116,7 +116,7 @@ Retreive modules taught by Charles Xavier:
 
 * MATCH (m)-[r:TAUGHT_BY]-(l) WHERE l.name = 'Charles Xavier' RETURN l,m;
 
-##### Cypher Queries Examples: Creating Nodes and Relationships.
+##### 6.2. Cypher Queries Examples: Creating Nodes and Relationships.
 ***
 ##### When creating a **node** the structure is as follows: CREATE (alias:Label{attribute-key1:attribute-value1}) 
 ##### When creating a **relationship** the structure is as follows: CREATE (alias-node1)-[:Label{attribute-key1:attribute-value1, .... }]->(alias-node2)
@@ -143,7 +143,7 @@ Labels and Attributes can be used to narrow down or be more specific about what 
 In the folder _**queries**_, in this repository there are a few text files containing queries to create nodes, and to recreate the prototype database _(cypher_query_v2.txt)_.
 
 
-### Conclusion
+### 7. Conclusion
 ***
 
 ### Authors

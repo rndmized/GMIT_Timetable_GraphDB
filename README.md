@@ -146,6 +146,10 @@ In the folder _**queries**_, in this repository there are a few text files conta
 ### 7. Conclusion
 ***
 
+This project has proved to be challenging. Changing from the mindset of relational databases to something as different as graph databases has been harder than I tought originally. I feel that I only scratched the surface of what shuch type of database can offer. It took me several designs using pen and paper to come up with a design that I could find suitable and, even after that, thinking about the constrains made me change it slightly. I do not feel this is the best design for a timetabling system due to the amount on properties between a class and a room, but I found hard to come up with a better design that suits the needs of the project. I'm looking forward to see what other options my peers have to offer and to see what a new set of eyes can see that I missed. It is a very interesting technology I never used before but I am sure I will come across again.
+
+
+
 ### Authors
 * **Albert Rando** - *Design, Documentation and Coding* - [rndmized](https://github.com/rndmized) - [LinkedIn](https://www.linkedin.com/in/albert-rando-612551121/)
 

@@ -8,7 +8,8 @@
 ##### 3. [Neo4J](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/3.-Neo4J)
 ##### 4. [Assumptions/Constrains](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/4.-Assumptions-Constrains)
 ##### 5. [Design Decisions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/5.-Design-Decisions)
-##### 6. [Conclusions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/6.-Conclusion)
+##### 6. [Queries](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/6.-Queries)
+##### 7. [Conclusions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/7.-Conclusion)
 
 ### Introduction
 
@@ -100,7 +101,7 @@ The database is designed to be interfaced with a piece of software with the adeq
 
 Data used to create the prototype database has been scrapped from the GMIT timetable [website](http://timetable.gmit.ie). Rooms/Venues have been obtained by copying the  relevant website´s source code and copied them into notepad, and removed the option tags. Lecturers names are either fictional or historical characters. Cousrses, modules and times are actual elements and have been extracted from the timetable for each one. All base data is in the folder data_sets in this repository. 
 
-#### Querying the Database
+### Querying the Database
 ##### Cypher Queries Examples: Retrieving Information
 ***
 

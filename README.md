@@ -21,10 +21,12 @@
 ##### 7. [Conclusion](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/7.-Conclusion)
 
 ### 1. Introduction
+***
 
 This repository contains a database design document and a graph database prototype for a third-year undergraduate project for the module Graph Theory. The module is taught to undergraduate students at GMIT in the Department of Computer Science and Applied Physics. The lecturer is Ian McLoughlin.
 
 ### 2. Overview
+***
 
 GMIT uses a database to store timetabling information. Courses, modules, different venues, are some of the pieces of information required to build a timetable. The main goal of this project is to design and implement, through a small prototype, a different way of store such data by using a Graph database called [Neo4J](https://neo4j.com/product/). To do so a Database Design Document is required in order to explain and detail what information needs to be stored, why is that information needed, what assumptions are made, contrains...
 
@@ -103,6 +105,8 @@ In order to answer those questions the database has been designed roughly as fol
 - **Taught** **To**: **Relationship** between a Module and a Course. Indicates _what_ is taught _to_ _whom_.
 - **On**: **Relationship** between Module and Room. Expressing the relationship between both node, _**time**_ being such relationship the day and time a _what_ is taught on _where_. In addition, in order to comply with the constrains where more than one lecturer can teach more than one module an attribute has been added to store such data. It also contains the group is being taught in case that the module has a lab, and the couse has more than one group. It indicates as well the duration the class is on.
 
+![DB Example](https://github.com/rndmized/GMIT_Timetable_GraphDB/blob/master/graph_images/graph_example.png)
+
 The database is designed to be interfaced with a piece of software with the adequate validation checks in order to ensure data integrity.
 
 #### 5.3. Where does the data come from?
@@ -111,6 +115,11 @@ The database is designed to be interfaced with a piece of software with the adeq
 Data used to create the prototype database has been scrapped from the GMIT timetable [website](http://timetable.gmit.ie). Rooms/Venues have been obtained by copying the  relevant website´s source code and copied them into notepad, and removed the option tags. Lecturers names are either fictional or historical characters. Cousrses, modules and times are actual elements and have been extracted from the timetable for each one. All base data is in the folder data_sets in this repository. 
 
 ### 6. Querying the Database
+
+This is the complete prototype from which we will extract any information through queries.
+
+![Complete Graph](https://github.com/rndmized/GMIT_Timetable_GraphDB/blob/master/graph_images/full_graph_representation.png)
+
 ##### 6.1. Cypher Queries Examples: Retrieving Information
 ***
 

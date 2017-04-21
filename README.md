@@ -6,10 +6,19 @@
 ##### 1. [Introduction](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/1.-Introduction)
 ##### 2. [Overview](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/2.-Overview)
 ##### 3. [Neo4J](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/3.-Neo4J)
+###### 3.1.What is Neo4J?
+###### 3.2. How does Neo4J Store Information?
 ##### 4. [Assumptions/Constrains](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/4.-Assumptions-Constrains)
+###### 4.1. Assumptions
+###### 4.2. Constrains
 ##### 5. [Design Decisions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/5.-Design-Decisions)
-##### 6. [Queries](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/6.-Queries)
-##### 7. [Conclusions](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/7.-Conclusion)
+###### 5.1. What information needs to be stored?
+###### 5.2. How is that information stored?
+###### 5.3. Where does the data come from?
+##### 6. [Querying the Database](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/6.-Queries)
+###### 6.1. Cypher Queries Examples: Retrieving Information
+###### 6.2. Cypher Queries Examples: Creating Nodes and Relationships.
+##### 7. [Conclusion](https://github.com/rndmized/GMIT_Timetable_GraphDB/wiki/7.-Conclusion)
 
 ### 1. Introduction
 

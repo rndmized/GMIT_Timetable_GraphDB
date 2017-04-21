@@ -125,6 +125,30 @@ Retreive modules taught by Charles Xavier:
 
 * MATCH (m)-[r:TAUGHT_BY]-(l) WHERE l.name = 'Charles Xavier' RETURN l,m;
 
+Retrieve all classes on Wednesday starting from 11 to 13:
+
+* MATCH (m)-[mcr:HAS]->(c)-[crr:ON]->(r) WHERE crr.day = 'Wed' AND (crr.time >= 11 AND crr.time <= 13) RETURN m,crr,r;
+
+Retrieve all classes taught by James Bond:
+
+* MATCH (l)<-[:TAUGHT_BY]-(m)-[mcr:HAS]->(c)-[crr:ON]->(r) WHERE crr.by = l.name AND l.name='James Bond' RETURN l,m,c
+
+Retrieve all classes in room 0484:
+
+* MATCH (m)-[mcr:HAS]->(c)-[crr:ON]->(r) WHERE r.roomNo='0484' RETURN m,c,r
+
+Retrieve all courses where Marie Curie is a lecturer:
+
+* MATCH (co)-[:TAUGHT_TO]-(m)-[:TAUGHT_BY]->(l) WHERE l.name='Marie Curie' RETURN co,l
+
+When and Where is Graph Theory thaught:
+
+* MATCH (m)-[:HAS]->(c)-[crr:ON]-(r) WHERE m.name = 'GRAPH THEORY' RETURN m,c,r
+
+Which rooms are used by a course(using course code) during the week:
+
+* MATCH (co)<-[:TAUGHT_TO]-(m)-[:HAS]->(c)-[crr:ON]-(r) WHERE co.code='KSOFG73' RETURN distinct(r)
+
 ##### 6.2. Cypher Queries Examples: Creating Nodes and Relationships.
 ***
 ##### When creating a **node** the structure is as follows: CREATE (alias:Label{attribute-key1:attribute-value1}) 
